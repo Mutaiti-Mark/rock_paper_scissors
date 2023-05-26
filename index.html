@@ -4,59 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href ="styles.css">
+    <script src="main.js" defer></script>
+    <title>rps-ui</title>
 </head>
 <body>
-
-    <script>
-        function getComputerChoice(){
-            let choiceList=["rock","paper","scissors"]
-            let randomIndex=Math.floor(Math.random()*3)
-            let choice=choiceList[randomIndex]
-            return choice
-        }
-
-        function playRound(playerSelection, computerSelection){
-            playerSelection = playerSelection.toLowerCase()
-
-            if (playerSelection == "rock" && computerSelection == "scissors"){
-                return "WIN"
-            }
-            else if (playerSelection == "paper" && computerSelection == "rock"){
-                return "WIN"
-            }
-            else if (playerSelection == "scissors" && computerSelection == "paper"){
-                return "WIN"
-            }
-            else if (playerSelection == "scissors" && computerSelection == "rock"){
-                return "LOSE"
-            }
-            else if (playerSelection == "rock" && computerSelection == "paper"){
-                return "LOSE"
-            }
-            else if (playerSelection == "paper" && computerSelection == "scissors"){
-                return "LOSE"
-            }
-            else if (playerSelection == computerSelection){
-                return "TIE!!"
-            }
-            else {
-                return "You chose"+" "+playerSelection+ "| Comp chose" +" "+computerSelection
-            }
-        }
-
-        function game(){
-            let resultArray = []
-            let i = 1
-            for (i; i<6; i++){
-            playerSelection = prompt("Please enter your choice")
-            computerSelection = getComputerChoice()
-            let result = playRound (playerSelection,computerSelection)
-            resultArray.push(result)
-            alert(`You ${result}`)
-            }
-        }
-        game()
-    </script>
+    
+    <div class="result">Result Goes Here</div>
+    <div class="container">
+        <div class="selectionCont">
+            <div class="selection" id="pSelect"></div>
+            <p>Your Choice</p>
+            <div class="btns">
+                <button class="btn" id="rock">ROCK</button>
+                <button class="btn" id="paper">PAPER</button>
+                <button class="btn" id="scissors">SCISSORS</button>
+            </div>
+        </div>
+        <div class="selectionCont">
+            <div class="selection" id="cSelect"></div>
+            <p>Computer's Choice</p>
+            <div class="btns">
+                <button class="btn">ROCK</button>
+                <button class="btn">PAPER</button>
+                <button class="btn">SCISSORS</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
